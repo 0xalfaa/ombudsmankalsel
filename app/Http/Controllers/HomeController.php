@@ -6,23 +6,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        return view('home');
+        // Misalkan Anda ingin mengirim data jumlah pengakuan
+        $confessionsCount = 200; // Gantilah dengan data dinamis jika diperlukan
+
+        return view('pages.landing-page.home.index', compact('confessionsCount'));
     }
 }
